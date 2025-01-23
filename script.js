@@ -30,34 +30,29 @@ menuIcon.onclick = () => {
 document.getElementById('formContact').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-
-    //Récupération des données du formulaire
+    // Récupération des données du formulaire
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
-    const sujet= document.getElementById('subject').value;
+    const sujet = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
-    try {
-        //Transmet la requête au backend, et transform en JSON les formats voulu
-        const reponse = await fetch('http://127.0.0.1:5000/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json',
-            },
-            body: JSON.stringify({ name, email, phone, sujet, message}),
-        });
+    // Transmet la requête au backend, et transforme en JSON les formats voulus
+    const response = await fetch('http://127.0.0.1:5000/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, phone, sujet, message }),
+    });
 
-        //Récupère les données obtenues par le backend
-        const result = await response.json();
+    // Récupère les données obtenues par le backend
+    console.log(response);
+    const result = await response.json();
 
-        if (reponse.ok) {
-            alert(result.message);
-        } else {
-            alert(result.error);
-        }
-    } catch (error) {
-        console.error('Erreur', error); 
-        alert('Une erreur est survenue. Veuillez réessayer.')
+    if (response.ok) {
+        alert("Le message as bien été transmis !", result.message);
+    } else {
+        alert(result.error);
     }
-})
+});

@@ -9,6 +9,9 @@ logging.basicConfig(level=logging.DEBUG)
 def contact():
     data = request.get_json()
     app.logger.debug(f'Requête reçue: {data}') #Affiche les données envoyés du front-end (debug)
+    
+    if not data:
+        return jsonify({'error': 'Aucune donnée reçue'}), 400        
 
     # Vérification des champs requis
     required_fields = ['name', 'email', 'phone', 'message', 'sujet']

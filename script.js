@@ -27,10 +27,18 @@ menuIcon.onclick = () => {
 }
 
 
-document.getElementById('formContact').addEventListener('submit', async (e) => {
+const submitButton = document.getElementById('submit-btn')
+const loader = document.getElementById('loader')
+
+submitButton.addEventListener('click', async (e) => {
     e.preventDefault();
 
-    // Récupération des données du formulaire
+    //Afficher le loader et désactiver le bouton
+    submitButton.disabled = true
+    submitButton.value = '';
+    loader.style.display = 'flex';
+
+    //Récupération des données du formulaire
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
@@ -46,13 +54,21 @@ document.getElementById('formContact').addEventListener('submit', async (e) => {
         body: JSON.stringify({ name, email, phone, sujet, message }),
     });
 
-    // Récupère les données obtenues par le backend
     console.log(response);
     const result = await response.json();
+    console.log(result);
 
-    if (response.ok) {
-        alert("Le message as bien été transmis !", result.message);
+    //Message d'erreur|succès de la requête
+    if(response.ok) {
+        alert('Message envoyé avec succès !', result.message);
     } else {
-        alert(result.error);
-    }
-});
+        alter('Erreur! Essayez à nouveau.');
+    };
+
+    //Reactivation du bouton
+    setTimeout(() => {
+       submitButton.disabled = false;
+       loader.style.display = 'none';
+       submitButton.value = 'Envoyé votre message'; 
+    }, 3000);
+})

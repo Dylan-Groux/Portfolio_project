@@ -11,7 +11,7 @@ def contact():
     app.logger.debug(f'Requête reçue: {data}') #Affiche les données envoyés du front-end (debug)
 
     # Vérification des champs requis
-    required_fields = ['name', 'email', 'phone', 'message']
+    required_fields = ['name', 'email', 'phone', 'message', 'sujet']
     for field in required_fields:
         if field not in data:
             return jsonify({"error": f"Le champ {field} est requis."}), 400
@@ -27,7 +27,7 @@ def contact():
     body = f"Nom: {name}\nEmail: {email}\nTéléphone: {phone}\n\nMessage:\n{message_content}\n Sujet : {sujet}"
 
     try:
-        msg = Message(subject, sender=email, recipients=['votre_email@gmail.com'])
+        msg = Message(subject, sender=email, recipients=['smtpredar@gmail.com'])
         msg.body = body
         mail.send(msg)
         return jsonify({"success": "Message envoyé avec succès."}), 200

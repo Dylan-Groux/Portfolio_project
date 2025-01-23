@@ -136,25 +136,25 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contacte <span>Moi</span></h2>
 
-        <form action="">
+        <form id='formContact'>
             <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Nom complet">
-                    <input type="email" placeholder="E-mail">
+                    <input type="text" id="name" placeholder="Nom complet">
+                    <input type="email" id="email" placeholder="E-mail">
                 </div>
                 <div class="input-box">
-                    <input type="phone" placeholder="Numéro de téléphone">
-                    <input type="text" placeholder="Sujet">
+                    <input type="phone" id="phone" placeholder="Numéro de téléphone">
+                    <input type="text" id="subject" placeholder="Sujet">
                 </div>
             </div>
 
             <div class="input-group-2">
-                <textarea name="" id="" placeholder="Votre Message" cols="30" rows="14"></textarea>
+                <textarea name="message" id="message" placeholder="Votre Message" cols="30" rows="14"></textarea>
+            </div>
+            <div class="input-group-3">
+                <input type="submit" value="Envoyé votre message" class="btn">
             </div>
         </form>
-        <div class="input-group-3">
-            <input type="submit" value="Envoyé votre message" class="btn">
-        </div>
     </section>
     
 <footer class="footer">

@@ -7,6 +7,11 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+# Récupère le port à partir des variables d'environnement (si disponible)
+port = int(os.environ.get("PORT", 5000))  # Utilise le port dynamique, 5000 en fallback
+
+app.run(host='0.0.0.0', port=port)
+
 # Configuration du serveur mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587

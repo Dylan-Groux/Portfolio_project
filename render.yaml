@@ -3,5 +3,5 @@ services:
     name: Portfolio
     env: python
     buildCommand: ""
-    startCommand: gunicorn portfolio.backend.app:app
+    startCommand: gunicorn portfolio.backend.__init__:app
 

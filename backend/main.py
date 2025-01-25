@@ -2,6 +2,7 @@ from config import app, mail
 from flask import jsonify, request, Flask
 import logging
 from flask_mail import Message
+import os
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -39,4 +40,5 @@ def contact():
         return jsonify({"error": "Une erreur est survenue lors de l'envoi du message.", "details": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

@@ -3,7 +3,6 @@ services:
     name: Portfolio
     env: python
     buildCommand: ""
-    startCommand: gunicorn portfolio.backend:app
 
 
 

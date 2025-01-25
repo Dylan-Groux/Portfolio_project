@@ -1,10 +1,10 @@
-from flask import jsonify, request
+from flask import jsonify, request, render_template
 from __init__ import app, mail
 from flask_mail import Message
 
 @app.route('/')
 def home():
-    return "Bienvenue sur mon portfolio!"
+    return render_template('index.html')
 
 @app.route('/contact', methods=['POST'])
 def contact():

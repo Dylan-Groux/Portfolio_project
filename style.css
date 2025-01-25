@@ -13,7 +13,7 @@
     --bg-color: #080808;
     --second-bg-color: #131313;
     --text-color: white;
-    --main-color: #611ba3;
+    --main-color: #ff3300;
 }
 
 html{
@@ -192,8 +192,8 @@ span{
 }
 
 .btn-group a:nth-of-type(2){
-   background-color: black;
-   color: var(--main-color);
+   background-color: rgb(16, 194, 0);
+   color: black;
    border: 2px solid var(--main-color);
    box-shadow: 0 0 25px transparent; 
 }
@@ -647,6 +647,15 @@ span{
         grid-template-columns: repeat(2,1fr);
         margin: 0 5rem;
     }
+    
+    .service-info p{
+        font-size: 1.4rem;
+        font-weight: 600;
+        max-height: 100px;
+        line-height: 1.7;
+        margin: auto;
+        margin-top: 2rem;
+    }
 }
 
 @media(max-width:991px){
@@ -678,7 +687,7 @@ span{
     }
 
     .input-group-2{
-        width: 63%;
+        width: 100%;
     }
     
     .input-group-3{
@@ -686,6 +695,16 @@ span{
     }
     .footer{
         padding: 2rem 3%;
+    }
+
+    
+    .service-info p{
+        font-size: 1.6rem;
+        font-weight: 600;
+        max-height: 100px;
+        line-height: 1.7;
+        margin: auto;
+        margin-top: 2rem;
     }
 }
 
@@ -711,8 +730,9 @@ span{
     }
     .navbar a{
         display: block;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: 3rem;
+        margin-left: 0rem;
         color: white;
     }
     .home{
@@ -743,7 +763,36 @@ span{
         margin-top: 5rem;
     }
     .input-group-2{
-        padding: 0 20%;
+        padding: 0 0%;
         width: 100%;
+    }
+    .competence h2{
+        font-size: 5.6rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        color: white;
+    }
+
+    .education h2{
+        font-size: 5.6rem;
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+        color: white;
+    }
+
+    .contact h2{
+        font-size: 5.6rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        color: white;
+    }
+    
+    .service-info p{
+        font-size: 1.3rem;
+        font-weight: 600;
+        max-height: 100px;
+        line-height: 1.7;
+        margin: auto;
+        margin-top: 2rem;
     }
 }

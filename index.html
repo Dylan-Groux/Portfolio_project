@@ -16,7 +16,7 @@
         <nav class="navbar" id="nav">
             <a href="#home" class="active">Accueil</a>
             <a href="#education">Etudes</a>
-            <a href="#competence">Compétence</a>
+            <a href="#competence">Compétences</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -135,15 +135,18 @@
                     <div class="input-box">
                         <input type="text" id="name" placeholder="Nom complet">
                         <input type="email" id="email" placeholder="E-mail">
+                        <span class="error" id="Errormail"></span>
                     </div>
                     <div class="input-box">
                         <input type="phone" id="phone" placeholder="Numéro de téléphone">
+                        <span class='error' id='Errorphone'></span>
                         <input type="text" id="subject" placeholder="Sujet">
                     </div>
                 </div>
 
                 <div class="input-group-2">
                     <textarea name="message" id="message" placeholder="Votre Message" cols="30" rows="14"></textarea>
+                    <span class="error" id='Errormessage'></span>
                 </div>
                 <div class="input-group-3" >
                     <input type="submit" id="submit-btn" value="Envoyé votre message" class="btn">

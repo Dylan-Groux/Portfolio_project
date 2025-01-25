@@ -1,13 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_mail import Mail
 from flask_cors import CORS
 import os
 
 # Création de l'app Flask
-app = Flask(__name__, static_folder='portfolio/static')
+app = Flask(__name__)
 CORS(app)
 
-# Configuration du serveur mail 
+# Configuration du serveur mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
@@ -18,5 +18,10 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
 mail = Mail(app)
 
+# Route de la page d'accueil
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 if __name__ == '__main__':
-    app.run()  # Retirer debug=True
+    app.run(debug=True)

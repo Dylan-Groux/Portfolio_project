@@ -1,20 +1,11 @@
-from flask import Flask, request, jsonify
-from flask_mail import Mail, Message
-from flask_cors import CORS
+import os
 
-app = Flask(__name__)
-CORS(app)
-
-# Configuration du serveur mail 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-
-app.config['MAIL_DEBUG'] = True
-
-app.config['MAIL_USERNAME'] = 'smtpredar@gmail.com'
-app.config['MAIL_PASSWORD'] = 'cvgl yoab izyi rvws'
-app.config['MAIL_DEFAULT_SENDER'] = 'smtpredar@gmail.com'
-
-mail = Mail(app)
-
+class Config:
+    # Configuration du serveur mail 
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_DEBUG = True
+    MAIL_USERNAME = os.getenv('MAIL_USERNAME')
+    MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+    MAIL_DEFAULT_SENDER = os.getenv('MAIL_DEFAULT_SENDER')

@@ -1,8 +1,7 @@
-from config import app, mail
 from flask import jsonify, request, Flask
-import logging
+from . import app, mail
 from flask_mail import Message
-import os
+import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -38,7 +37,3 @@ def contact():
     except Exception as e:
         app.logger.error(f"Erreur lors de l'envoi du message : {str(e)}") # Récupère plus précisement l'erreur (debug)
         return jsonify({"error": "Une erreur est survenue lors de l'envoi du message.", "details": str(e)}), 500
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)

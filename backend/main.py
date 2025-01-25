@@ -2,6 +2,10 @@ from flask import jsonify, request
 from __init__ import app, mail
 from flask_mail import Message
 
+@app.route('/')
+def home():
+    return "Bienvenue sur mon portfolio!"
+
 @app.route('/contact', methods=['POST'])
 def contact():
     data = request.get_json()

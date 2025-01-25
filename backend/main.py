@@ -1,5 +1,5 @@
 from flask import jsonify, request
-from . import app, mail
+from __init__ import app, mail
 from flask_mail import Message
 
 @app.route('/contact', methods=['POST'])

@@ -18,6 +18,9 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
 mail = Mail(app)
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
 # Fonction pour initialiser l'app
 def create_app():
     app.config.from_object('config')

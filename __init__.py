@@ -4,7 +4,7 @@ from flask_cors import CORS
 import os
 
 # Création de l'app Flask
-app = Flask(__name__)
+app = Flask(__name__, static_folder='portfolio/static')
 CORS(app)
 
 # Configuration du serveur mail 

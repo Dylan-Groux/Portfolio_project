@@ -28,11 +28,12 @@ def home():
 @app.route('/contact', methods=['POST'])
 def contact():
     # Récupérer les données du formulaire
-    name = request.form.get('name')
-    email = request.form.get('email')
-    phone = request.form.get('phone')
-    sujet = request.form.get('sujet')
-    message_content = request.form.get('message')
+    data = request.get_json()
+    name = data.get('name')
+    email = data.get('email')
+    phone = data.get('phone')
+    sujet = data.get('sujet')
+    message_content = data.get('message')
 
     # Log des données pour vérification
     app.logger.debug(f'Requête reçue: {name}, {email}, {phone}, {sujet}, {message_content}')

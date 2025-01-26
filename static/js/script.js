@@ -113,7 +113,7 @@ submitButton.addEventListener('click', async (e) => {
         if (isValid) {
             try {
             // Transmet la requête au backend, et transforme en JSON les formats voulus
-            const response = await fetch('https://portfolio-project-55u9.onrender.com/contact', {
+            const response = await fetch('https://portfolio-project-55u9.onrender.com/#contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

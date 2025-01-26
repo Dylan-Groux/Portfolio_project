@@ -124,7 +124,7 @@ submitButton.addEventListener('click', async (e) => {
             //Affichage du résultat du statu et le contenu si ce n'est pas JSON
             if(!response.ok) {
                 const errorText = await response.text();
-                throw new Error('Erreur ${response.status} : ${errorText}');
+                console.log(errorText)
             }
 
             console.log(response);
